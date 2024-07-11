@@ -20,4 +20,27 @@ body {
 .frame span{
     display: flex;
     align-items: center;
+    justify-content: center;
+    height: 5vw;
+    font-size: 3vw;
+    /* background-color: blueviolet; */
+    text-align: center;
+    padding: 0 5vw;
+    font-weight: 700;
+}
+.frame{
+  overflow: hidden;
+  height: 5vw;
+  /* background-color: yellow; */
+}
+
+#circle{
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  width: 2vw;
+  height: 2vw;
+  background-color: rgb(72, 18, 137);
 }
