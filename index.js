@@ -1,5 +1,6 @@
 var circle = document.querySelector("#circle");
 var frame = document.querySelector(".frame");
+const lerp = (x, y, a) => x * (1 - a) + y * a;
 
 window.addEventListener("mousemove", function (dets) {
   gsap.to(circle, {
@@ -11,6 +12,8 @@ window.addEventListener("mousemove", function (dets) {
 });
 
 frame.addEventListener("mousemove", function (dets) {
+    
+
   gsap.to(circle, {
     scale: 8,
   });
@@ -26,7 +29,7 @@ frame.addEventListener("mouseleave", function (dets) {
   gsap.to(circle, {
     scale: 1,
   });
-  
+
   gsap.to(".frame span", {
     color: "#000",
     duration: 0.4,
