@@ -12,7 +12,12 @@ window.addEventListener("mousemove", function (dets) {
 });
 
 frame.addEventListener("mousemove", function (dets) {
-    
+  var dims = frame.getBoundingClientRect();
+
+  var xstart = dims.x;
+  var xend = dims.x + dims.width;
+
+  var zeroone = gsap.utils.mapRange(xstart, xend, 0, 1, dets.clientX);
 
   gsap.to(circle, {
     scale: 8,
@@ -22,6 +27,11 @@ frame.addEventListener("mousemove", function (dets) {
     color: "#fff",
     duration: 0.4,
     y: "-5vw",
+  });
+
+  gsap.to(".frame span", {
+    x: lerp(-50, 50, zeroone),
+    duration: 0.3,
   });
 });
 
